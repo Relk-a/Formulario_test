@@ -6,16 +6,16 @@ export default function LoginAdmin({ onLogin }) {
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post("http://localhost:3000/api/login", form);
       localStorage.setItem("token", res.data.token);
-      onLogin(); // Notificar al padre que ya se autenticó
+      onLogin(); 
     } catch (err) {
         console.error(err);
-      alert("❌ Credenciales inválidas");
+      alert(" Credenciales inválidas");
     }
   };
 

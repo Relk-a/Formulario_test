@@ -12,7 +12,7 @@ export default function FormPago() {
     fecha_vencimiento: "",
     codigo_seguridad: ""
   });
-
+ 
   const [expMonth, setExpMonth] = useState("");
   const [expYear, setExpYear] = useState("");
   const [showCVV, setShowCVV] = useState(false);
@@ -65,7 +65,7 @@ export default function FormPago() {
         fecha_pago: new Date().toISOString()
       };
 
-      await axios.post("http://localhost:3000/api/transacciones", dataToSend);
+      await axios.post("https://formulario-test.onrender.com/api/transacciones", dataToSend);
 
       setModal({ show: true, message: "Pago registrado con éxito", success: true });
 

@@ -11,7 +11,7 @@ export default function LoginAdmin({ onLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/login", form);
+      const res = await axios.post("https://formulario-test.onrender.com/api/login", form);
       localStorage.setItem("token", res.data.token);
       onLogin();
     } catch (err) {
@@ -19,7 +19,7 @@ export default function LoginAdmin({ onLogin }) {
       alert("Credenciales inválidas");
     }
   };
-
+ 
   return (
     <div className="container mt-5" style={{ maxWidth: 420 }}>
       <h2 className="mb-4" style={{ textAlign: "center" }}>

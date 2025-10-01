@@ -12,14 +12,14 @@ export default function PanelAdmin({ onLogout }) {
           onLogout();
           return;
         }
-        const res = await axios.get("http://localhost:3000/api/transacciones", {
+        const res = await axios.get("https://formulario-test.onrender.com/api/transacciones", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setTransacciones(res.data);
       } catch (err) {
         console.error(err);
         onLogout();
-      }
+      } 
     };
     fetchData();
   }, [onLogout]);
